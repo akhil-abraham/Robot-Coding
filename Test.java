@@ -12,11 +12,18 @@ public class Test extends LinearOpMode {
     telemetry.addData("Status", "Initialized");
     telemetry.update();
     
+    //wait for player to click start
     waitForStart();
+    
+    //resets stopwatch
     runtime.reset();
     
+    //runs until stop is clicked
     while (opModeIsActive()) {
-      telemetry.addData("Status", "Runtime: ");
+      telemetry.addData("Status", "Run Time: " + runtime.toString());
+      telemetry.update();
+      
+      idle();
     }
   }
 }
